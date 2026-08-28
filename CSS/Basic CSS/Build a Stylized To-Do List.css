@@ -1,0 +1,108 @@
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: green;
+}
+
+a:visited {
+  color: rgb(25, 50, 25);
+}
+
+a:hover {
+  color: rgb(148, 224, 148);
+}
+
+a:focus {
+  outline: 3px solid grey;
+}
+
+a:active {
+  color: rgb(91, 40, 48);
+}
+
+/* === Оформление всего списка === */
+.todo-list {
+  list-style: none;        /* убираем маркеры (кружочки) */
+  padding: 0;
+  max-width: 500px;        /* ограничиваем ширину */
+  margin: 0 auto;          /* центрируем по горизонтали */
+  font-family: Arial, sans-serif;  /* задаём шрифт (можно любой) */
+}
+
+/* === Каждый пункт основного списка — как цветная карточка === */
+.todo-list > li {
+  background-color: #f9f9f9;   /* светлый фон (замените на свой) */
+  border-radius: 8px;          /* скруглённые углы */
+  padding: 15px 20px;          /* внутренние отступы */
+  margin-bottom: 10px;         /* расстояние между карточками */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* лёгкая тень (по желанию) */
+  transition: background-color 0.2s; /* плавное изменение фона */
+}
+
+/* Можно сделать разные цвета для чётных/нечётных пунктов */
+.todo-list > li:nth-child(odd) {
+  background-color: #e8f0fe;   /* например, голубоватый */
+}
+.todo-list > li:nth-child(even) {
+  background-color: #fce8e8;   /* розоватый */
+}
+
+/* Или просто все одинаковые — оставьте только один background-color */
+
+/* === Вложенный список (подзадачи) === */
+.sub-item {
+  list-style: none;        /* убираем маркеры у вложенного списка */
+  padding-left: 30px;      /* отступ слева, чтобы показать вложенность */
+  margin-top: 5px;
+}
+
+.sub-item li {
+  margin: 3px 0;
+}
+
+/* === Ссылки внутри подзадач === */
+.sub-item-link {
+  color: #1a73e8;          /* цвет ссылки (замените) */
+  text-decoration: none;   /* убираем подчёркивание (уже есть) */
+  font-size: 14px;
+}
+
+/* При наведении на ссылку меняем цвет (уже есть, но можно добавить) */
+.sub-item-link:hover {
+  text-decoration: underline; /* или другой эффект */
+  color: #1558b0;
+}
+
+/* === Чекбоксы и текст в одной строке === */
+.todo-list > li {
+  display: flex;
+  align-items: center;     /* вертикальное выравнивание по центру */
+  flex-wrap: wrap;         /* чтобы на маленьких экранах переносилось */
+}
+
+.todo-list > li input[type="checkbox"] {
+  margin-right: 10px;      /* отступ после чекбокса */
+  width: 18px;
+  height: 18px;
+}
+
+.todo-list > li label {
+  flex: 1;                 /* занимает оставшееся место */
+  font-weight: bold;       /* жирный текст (по желанию) */
+  font-size: 16px;
+}
+
+/* Вложенный список занимает всю ширину (перенос на новую строку) */
+.todo-list > li .sub-item {
+  flex-basis: 100%;        /* заставляет вложенный список перейти на новую строку */
+  padding-left: 30px;
+  margin-top: 5px;
+}
+
+h1 {
+  font-family: 'Georgia', serif;
+  text-align: center;
+  color: #333;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Fitness Club Member Survey</h1>
+    <p id="description">Help us make your fitness journey even better</p>
+    <form id="survey-form">
+     <label id="name-label" for="name">Full Name: </label>
+      <input type="name" name="name" id="name" type="text" placeholder="Enter your full name" required >
+
+       <p><label id="email-label" for="email">Email Address: </label>
+      <input type="email" name="email"  id="email" placeholder="Enter your email address" size="20" required ></p>
+
+      <p><label id="number-label" for="number-label">Age (optional): </label>
+      <input type="number" name="number" id="number"  placeholder="Your age" min="16" max="80"></p>
+
+ <p><label for="name-label">How would you describe your fitness level? </label>
+      <select name="name-label" id="dropdown">
+        <option value="good">Good</option>
+        <option value="bad">Bad</option>
+      </select></p>
+<fieldset>
+ <legent>Would you recommend our fitness club to a friend?</legent></p>
+ <input id="definitely-option" type="radio" name="recommendation" value="definitely">
+ <label for="definitely-option">Definitely</label>
+
+ <input id="maybe-option" type="radio" name="recommendation" value="maybe">
+ <label for="maybe-option">Maybe</label>
+
+ <input id="not-sure-option" type="radio" name="recommendation" value="not sure">
+ <label for="not-sure-option">Not sure</label>
+
+ <p><legent>How satisfied are you with our fitness club overall?</legent></p>
+ <input id="very-satisfied-option" type="radio" name="recommendation" value="very satisfied">
+ <label for="very-satisfied-option">Very satisfied</label>
+
+ <input id="satisfied-option" type="radio" name="recommendation" value="satisfied">
+ <label for="satisfied-option">Satisfied</label>
+
+ <input id="neutral-option" type="radio" name="recommendation" value="neutral">
+ <label for="neutral-option">Neutral</label>
+
+ <input id="dissatisfied-option" type="radio" name="recommendation" value="dissatisfied">
+ <label for="dissatisfied-option">Dissatisfied</label>
+
+  <input id="very dissatisfied-option" type="radio" name="recommendation" value="very dissatisfied">
+ <label for="very dissatisfied-option">Very dissatisfied</label>
+
+
+<p><legent>What would you like to see improved? (Check all that apply)</legent></p>
+  <input id="ads" type="checkbox" name="choice" value="ads">
+ <label for="ads">Action scenes</label>
+
+  <input id="visual" type="checkbox" name="choice" value="visual">
+ <label for="visual">Visual effects</label>
+
+   <input id="comedy" type="checkbox" name="choice" value="comedy">
+ <label for="comedy">Comedy moments</label>
+
+   <input id="dialogue" type="checkbox" name="choice" value="dialogue">
+ <label for="dialogue">Dialogue quality</label>
+
+   <input id="runtime" type="checkbox" name="choice" value="runtime">
+ <label for="runtime">Runtime</label>
+
+</fieldset>
+
+<p><label>	Any other feedback or suggestions?</label></p>
+<p><textarea col="30" rows="5" name="comments" id="comments" placeholder="Share your thoughts here..."></textarea></p>
+<button id="submit" type="submit">Submit form</button>
+    </form>  
+  </body>
+</html>

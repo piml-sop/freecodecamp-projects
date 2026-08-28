@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(204, 220, 204);
+}
+
+.read-more {
+  text-align: center;
+}
+
+.blog-post-card {
+  background-color: white;
+  border-radius: 40px;
+  width: 70%;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.post-img {
+  width: 100%; /*для того, чтоб картинка заполняла всю ширину карточки*/
+  border-bottom: 1px solid rgb(30, 30, 36);
+}
+
+.post-content {
+  padding: 10px;
+}
+
+.post-title {
+  color: rgb(65, 50, 50);
+  margin: 10px;
+}
+
+.post-excerpt {
+  color: rgb(65, 50, 50);
+  margin: 10px;
+}
+
+.read-more {
+  color: rgb(119, 119, 227);
+  background-color: rgb(245, 245, 178);
+  margin: 10px;
+  padding:10px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.read-more:hover {
+  background-color: rgb(202, 202, 205);

@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 3rem 1.5rem;
+  background: #14161f;
+  color: #e8e8ef;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+thead tr {
+  background: #23273a;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+th,
+td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Градиенты фона строк по статусу (селекторы атрибутов) */
+tr[class="read"] {
+  background-image: linear-gradient(90deg, #1e3a2b 0%, #17251e 100%);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(90deg, #3a2f1e 0%, #251f17 100%);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(90deg, #1e2c3a 0%, #17212b 100%);
+}
+
+/* Каждый span — это inline-block */
+span {
+  display: inline-block;
+}
+
+/* Стили солидов статуса для каждого типа строк (селекторы атрибутов) */
+tr[class="to-read"] span[class="status"] {
+  border: 1px solid #d69a4a;
+  background-image: linear-gradient(90deg, #d69a4a, #a56a24);
+}
+
+tr[class="read"] span[class="status"] {
+  border: 1px solid #47a874;
+  background-image: linear-gradient(90deg, #47a874, #2c6e4c);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 1px solid #4d8fd1;
+  background-image: linear-gradient(90deg, #4d8fd1, #2c5c8f);
+}
+
+/* Общая настройка размеров для солида статуса и обертки ставки */
+span[class="status"],
+span[class^="rate"] {
+  height: 26px;
+  width: 92px;
+  padding: 5px 8px;
+  text-align: center;
+  border-radius: 13px;
+  color: #fff;
+  font-size: 0.78rem;
+  vertical-align: middle;
+}
+
+/* Три пустые точки внутри обертки ставки (для рейтинга) */
+span[class^="rate"] > span {
+  border: 1px solid #666;
+  border-radius: 50%;
+  margin: 0 2px;
+  height: 12px;
+  width: 12px;
+  background-color: #3a3d4a;
+}
+
+/* Заполненные точки в зависимости от персонального тарифа */
+span[class~="one"] span:first-child {
+  background-image: linear-gradient(180deg, #ffd166, #ef8f26);
+}
+
+span[class~="two"] span:nth-child(-n+2) {
+  background-image: linear-gradient(180deg, #ffd166, #ef8f26);
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(180deg, #ffd166, #ef8f26);
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexbox Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav id="navbar">
+        <header>CSS Flexbox Guide</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Flex_Container">Flex Container</a>
+        <a class="nav-link" href="#Flex_Items">Flex Items</a>
+        <a class="nav-link" href="#Alignment">Alignment</a>
+        <a class="nav-link" href="#Practical_Examples">Practical Examples</a>
+    </nav>
+
+    <main id="main-doc">
+
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>Flexbox is a one-dimensional layout model that offers powerful space distribution and alignment capabilities. Unlike block and inline layouts, flexbox works with a <strong>flex container</strong> and its <strong>flex items</strong>.</p>
+            <p>The main idea is to give the container the ability to alter its items' width, height, and order to best fill the available space. Flexbox is great for responsive design and simplifies many common layout patterns.</p>
+            <p>Flexbox has two axes: the <strong>main axis</strong> and the <strong>cross axis</strong>. The main axis is defined by the <code>flex-direction</code> property, while the cross axis runs perpendicular to it.</p>
+            <code>display: flex; /* or inline-flex */</code>
+            <p>To start using flexbox, you simply set <code>display: flex</code> on a container element. All its direct children become flex items.</p>
+            <ul>
+                <li>Flex items are laid out along the main axis.</li>
+                <li>The container can control wrapping, alignment, and ordering.</li>
+                <li>Flexbox is ideal for UI components like navigation bars, cards, and forms.</li>
+            </ul>
+        </section>
+
+            <section class="main-section" id="Flex_Container">
+            <header>Flex Container</header>
+            <p>The flex container is the parent element with <code>display: flex</code> or <code>display: inline-flex</code>. It establishes the flex formatting context for its children.</p>
+            <p>Important properties for the container include <code>flex-direction</code>, <code>flex-wrap</code>, <code>justify-content</code>, <code>align-items</code>, and <code>align-content</code>.</p>
+            <p><code>flex-direction</code> defines the main axis direction: row, row-reverse, column, column-reverse.</p>
+            <code>flex-direction: row; /* default */</code>
+            <p><code>flex-wrap</code> controls whether items wrap onto multiple lines: nowrap, wrap, wrap-reverse.</p>
+            <code>flex-wrap: wrap;</code>
+            <ul>
+                <li><code>flex-flow</code> is a shorthand for <code>flex-direction</code> and <code>flex-wrap</code>.</li>
+                <li>Example: <code>flex-flow: row wrap;</code></li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Flex_Items">
+            <header>Flex Items</header>
+            <p>Flex items are direct children of a flex container. They can be sized and ordered independently.</p>
+            <p>Key properties for items are <code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-basis</code>, and the shorthand <code>flex</code>.</p>
+            <p><code>flex-grow</code> defines how much the item will grow relative to others. Default is 0.</p>
+            <code>flex-grow: 1; /* takes up remaining space */</code>
+            <p><code>flex-shrink</code> defines how the item shrinks if space is tight.</p>
+            <code>flex-shrink: 1; /* default */</code>
+            <ul>
+                <li><code>flex-basis</code> sets the initial main size of the item.</li>
+                <li>The shorthand <code>flex: 1 1 auto;</code> means grow, shrink, and base size auto.</li>
+                <li><code>order</code> changes the visual order of items without affecting source order.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Alignment">
+            <header>Alignment</header>
+            <p>Alignment in flexbox is achieved through several properties that work on both axes.</p>
+            <p><code>justify-content</code> aligns items along the main axis. Possible values: flex-start, flex-end, center, space-between, space-around, space-evenly.</p>
+            <code>justify-content: center;</code>
+            <p><code>align-items</code> aligns items along the cross axis. Values: stretch, flex-start, flex-end, center, baseline.</p>
+            <code>align-items: stretch; /* default */</code>
+            <p><code>align-self</code> allows an individual item to override the container's <code>align-items</code>.</p>
+            <code>align-self: flex-end;</code>
+            <ul>
+                <li>Use <code>align-content</code> to align multiple lines of items (when wrapping).</li>
+                <li>It works like <code>justify-content</code> but on the cross axis.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Practical_Examples">
+            <header>Practical Examples</header>
+            <p>Here are some common use cases for flexbox in real projects.</p>
+            <p><strong>Navigation bar:</strong> Use <code>display: flex</code> on the <code>&lt;nav&gt;</code> to distribute links evenly.</p>
+            <code>nav { display: flex; justify-content: space-around; }</code>
+            <p><strong>Card layout:</strong> Use <code>flex-wrap: wrap</code> and <code>flex: 1 1 200px;</code> on cards to create responsive grid.</p>
+            <code>.cards { display: flex; flex-wrap: wrap; }</code>
+            <p><strong>Centering a div:</strong> Combine <code>justify-content: center</code> and <code>align-items: center</code>.</p>
+            <code>.center { display: flex; justify-content: center; align-items: center; height: 100vh; }</code>
+            <ul>
+                <li>Flexbox is widely supported in all modern browsers.</li>
+                <li>It's a fundamental tool for CSS layouts today.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

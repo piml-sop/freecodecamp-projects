@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #1e1e2f, #2a2a40);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+#drum-machine {
+    background: #2c2c3e;
+    border-radius: 32px;
+    padding: 30px 35px 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), inset 0 -4px 8px rgba(0, 0, 0, 0.5);
+    width: 420px;
+    text-align: center;
+}
+
+#pad-bank {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.drum-pad {
+    background: #3b3b55;
+    border: none;
+    border-radius: 16px;
+    padding: 20px 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #f0e9d0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 0 #1f1f2e, 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.07s ease;
+    outline: none;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #1f1f2e;
+    background: #5a5a7a;
+    color: #fff;
+}
+
+#display {
+    background: #1a1a28;
+    border-radius: 40px;
+    padding: 14px 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #b8e6b8;
+    letter-spacing: 1px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6);
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #4a4a66;
+}
+
+@media (max-width: 480px) {
+    #drum-machine {
+        width: 94%;
+        padding: 20px;
+    }
+
+    .drum-pad {
+        font-size: 22px;
+        padding: 16px 0;
+    }
+}

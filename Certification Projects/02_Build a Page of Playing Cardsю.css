@@ -1,0 +1,169 @@
+/* ── Общие сбросы и фон ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at center, #1e3a2b 0%, #0f1f16 100%);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    padding: 30px 20px;
+}
+
+/* ── Контейнер с картами ── */
+#playing-cards {
+    display: flex;              /* ✅ тест 8 */
+    flex-wrap: wrap;            /* ✅ тест 10 */
+    justify-content: center;    /* ✅ тест 9 */
+    gap: 20px;                 /* ✅ тест 11 */
+    max-width: 1100px;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+/* ── Одна карта ── */
+.card {
+    display: flex;              /* ✅ тест 12 */
+    flex-direction: column;
+    justify-content: space-between;  /* ✅ тест 13 */
+    width: 180px;
+    height: 260px;
+    background: #fcf9f2;
+    border-radius: 16px;
+    padding: 16px 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 11px;
+    border: 1px solid rgba(180, 160, 130, 0.15);
+    pointer-events: none;
+}
+
+/* ── Левый угол ── */
+.left {
+    align-self: flex-start;     /* ✅ тест 14 */
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+.left .suit-small {
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+/* ── Центр (колонка мастей) ── */
+.middle {
+    align-self: center;         /* ✅ тест 15 */
+    display: flex;              /* ✅ тест 17 */
+    flex-direction: column;     /* ✅ тест 18 */
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 48px;
+    line-height: 1;
+    user-select: none;
+    flex: 1;
+    padding: 6px 0;
+}
+.middle .suit-mid {
+    font-size: 44px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.middle .suit-mid.large {
+    font-size: 68px;
+}
+
+/* ── Правый угол (перевёрнутый) ── */
+.right {
+    align-self: flex-end;       /* ✅ тест 16 */
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotate(180deg);
+    user-select: none;
+}
+.right .suit-small {
+    font-size: 18px;
+    margin-top: -2px;
+}
+
+/* ── Цвета мастей ── */
+.suit-red { color: #c62828; }
+.suit-black { color: #1a1a2e; }
+
+.rank {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ── Адаптивность ── */
+@media (max-width: 650px) {
+    .card { width: 150px; height: 220px; padding: 12px 10px; }
+    .left, .right { font-size: 18px; }
+    .left .suit-small, .right .suit-small { font-size: 15px; }
+    .middle .suit-mid { font-size: 34px; }
+    .middle .suit-mid.large { font-size: 50px; }
+    .rank { font-size: 20px; }
+    #playing-cards { gap: 16px; padding: 10px 4px; }
+}
+
+@media (max-width: 420px) {
+    .card { width: 130px; height: 190px; padding: 10px 8px; border-radius: 12px; }
+    .left, .right { font-size: 15px; }
+    .left .suit-small, .right .suit-small { font-size: 12px; }
+    .middle .suit-mid { font-size: 28px; }
+    .middle .suit-mid.large { font-size: 40px; }
+    .rank { font-size: 17px; }
+    #playing-cards { gap: 12px; }
+    .card::after { inset: 4px; border-radius: 9px; }
+}
+
+/* ── Заголовок (декор) ── */
+.page-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #e8ddd0;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+.page-header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #f0e6d8;
+}
+.page-header p {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 4px;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+@media (max-width: 650px) {
+    .page-header h1 { font-size: 24px; letter-spacing: 4px; }
+    .page-header p { font-size: 12px; }
+}
